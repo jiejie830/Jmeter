@@ -7,9 +7,9 @@
       
     <property name="jmeter.home" value="F:\tools\apache-jmeter-3" />
     
-    <property name="jmeter.result.jtl.dir" value="C:\Users\jiezhang\Desktop\performance" />
+    <property name="jmeter.result.jtl.dir" value=".\" />
     <!-- jmeter生成html格式的结果报告的路径-->
-    <property name="jmeter.result.html.dir" value="C:\Users\jiezhang\Desktop\performance\html" />
+    <property name="jmeter.result.html.dir" value=".\html" />
     <!-- 生成的报告的前缀-->  
     <property name="ReportName" value="TestReport" />
     <property name="jmeter.result.jtlName" value="${jmeter.result.jtl.dir}/${ReportName}${time}.jtl" />
@@ -30,7 +30,7 @@
         <taskdef name="jmeter" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask" />
 		<tstamp><format property="report.datestamp" pattern="yyyy/MM/dd HH:mm"/></tstamp>
         <jmeter jmeterhome="${jmeter.home}" resultlog="${jmeter.result.jtlName}">
-            <testplans dir="C:\Users\jiezhang\Desktop\performance" includes="*.jmx" />
+            <testplans dir=".\" includes="*.jmx" />
 			<property name="jmeter.save.saveservice.output_format" value="xml"/>
         </jmeter>
     </target>
