@@ -57,8 +57,10 @@
         </copy>
     </target>
 	
-	<target name="publish">
-		<copy todir = "${jmeter.report}">
+	<target name="publish">		
+		<tstamp> <format property="report.datestamp" pattern="yyyy-MM-dd-HH-mm" /></tstamp>
+		<echo message = "publish report to ${report.datestamp}" />
+		<copy todir = "${jmeter.report}/${report.datestamp}">
 			<fileset dir="${jmeter.result.html.dir}">
 				<include name="*.png" />
 				<include name="*.html" />
